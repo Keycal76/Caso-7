@@ -9,6 +9,8 @@ import java.security.Key;
 public class Caso7 {
 	private static SecretKeySpec secretKey; 
 	private static byte[] key;
+	private static String msj;
+	private static String myKey;
 	
 	public static SecretKeySpec setKey(String myKey){
 		MessageDigest sha=null;
@@ -30,18 +32,25 @@ public class Caso7 {
 		return null;
 	} 
 	
-	
-	public static void main(String[] args) throws Exception{
-		String msj="xZwM7BWIpSjYyGFr9rhpEa+cYVtACW7yQKmyN6OYSCv0ZEg9jWbc6lKzzCxRSSIvOvlimQZBMZOYnOwiA9yy3YU8zk4abFSItoW6Wj0ufQ0=";
-		String myKey="29dh120_dk1_3";
-		Criptado prueba=new Criptado();
+	public static void pruebaConDobleFor(Criptado prueba) {
+		String respuesta;
 		for(int i=0;i<26;i++){
 			String ascii = Character.toString((char) 97+i);
 			for(int j=0;j<10;j++){
-				System.out.println(ascii+"    "+Integer.toString(j)+"    "+"29dh120"+ascii+"dk1"+Integer.toString(j)+"3");
 				prueba.setKey(setKey("29dh120"+ascii+"dk1"+Integer.toString(j)+"3"));
-				System.out.println(prueba.decrypt(msj));
+				respuesta=prueba.decrypt(msj);
+				if(respuesta.equals("NULL")!=true) {
+					System.out.println(ascii+"    "+Integer.toString(j)+"    "+"29dh120"+ascii+"dk1"+Integer.toString(j)+"3");
+					System.out.println(prueba.decrypt(msj));
+				}
 			}
 		}
+	}
+	
+	public static void main(String[] args){
+		msj="xZwM7BWIpSjYyGFr9rhpEa+cYVtACW7yQKmyN6OYSCv0ZEg9jWbc6lKzzCxRSSIvOvlimQZBMZOYnOwiA9yy3YU8zk4abFSItoW6Wj0ufQ0=";
+		myKey="29dh120_dk1_3";
+		Criptado prueba=new Criptado();
+		pruebaConDobleFor(prueba);
 	}
 }
