@@ -38,7 +38,7 @@ public class Grupos {
 			List<String> subGrupo2=grupo2.subList((int)(tam2*i),(int)(tam2*(i+1)));
 			
 			subGrupos.add(new SubGrupos(subGrupo1,subGrupo2,prueba,msj));
-			subGrupos.get(i).busquedaExaustiva();
+			subGrupos.get(i).busqueda50porciento();
 		}
 		return null;
 	}
