@@ -2,6 +2,7 @@ package Programa;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.Key;
@@ -52,5 +53,15 @@ public class Caso7 {
 		myKey="29dh120_dk1_3";
 		Criptado prueba=new Criptado();
 		pruebaConDobleFor(prueba);
+		ArrayList<String> letras= new ArrayList<String>();
+		ArrayList<String> numeros= new ArrayList<String>();
+		for(int i=0;i<26;i++){
+			letras.add(Character.toString((char) 97+i));
+		}
+		for(int i=0;i<10;i++){
+			numeros.add(Integer.toString(i));
+		}
+		Grupos gruposDePrueba=new Grupos(letras,numeros);
+		gruposDePrueba.imprimirGrupos();
 	}
 }
