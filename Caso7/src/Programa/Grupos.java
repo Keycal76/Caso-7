@@ -1,6 +1,7 @@
 package Programa;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Grupos {
@@ -24,16 +25,18 @@ public class Grupos {
 		}
 	}
 	
-	public String[][] reducirGrupos(){
+	public String[][] reducirGrupos(int cantSubGrupos){
 		ArrayList<SubGrupos> subGrupos= new ArrayList<SubGrupos>();
-		//double tamano1=
+		double tam1=((double)grupo1.size())/cantSubGrupos;
+		double tam2=((double)grupo2.size())/cantSubGrupos;
 		grupo1=desordenarArray(grupo1);
 		grupo2=desordenarArray(grupo2);
-		for(int i=0;i<4;i++) {
-			//subGrupos.add(new SubGrupos(grupo1.subList(,),(grupo2.subList(,)));
+		for(int i=0;i<cantSubGrupos;i++) {
+			List<String> subGrupo1=grupo1.subList((int)(tam1*i),(int)(tam1*(i+1)));
+			List<String> subGrupo2=grupo2.subList((int)(tam2*i),(int)(tam2*(i+1)));
+			
+			subGrupos.add(new SubGrupos(subGrupo1,subGrupo2,prueba));
 		}
-		int random1=(int) (Math.random() * grupo1.size()) + 1;
-		int random2=(int) (Math.random() * grupo2.size()) + 1;
 		return null;
 	}
 	

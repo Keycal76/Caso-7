@@ -62,7 +62,7 @@ public class Caso7 {
 			numeros.add(Integer.toString(i));
 		}
 		Grupos gruposDePrueba=new Grupos(letras,numeros,prueba);
-		gruposDePrueba.reducirGrupos();
+		gruposDePrueba.reducirGrupos(5);
 		//gruposDePrueba.imprimirGrupos();
 	}
 }
