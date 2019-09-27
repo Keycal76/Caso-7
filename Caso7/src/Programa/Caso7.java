@@ -13,32 +13,14 @@ public class Caso7 {
 	private static String msj;
 	private static String myKey;
 	
-	public static SecretKeySpec setKey(String myKey){
-		MessageDigest sha=null;
-		try{
-			key=myKey.getBytes("UTF-8");
-			sha=MessageDigest.getInstance("SHA-1");
-			key=sha.digest(key);
-			key=Arrays.copyOf(key,16);
-			secretKey=new SecretKeySpec(key,"AES");
-			return secretKey;
-		}
-		catch(NoSuchAlgorithmException e){
-			e.printStackTrace();  
-			System.out.println("Error 1");
-		}catch(UnsupportedEncodingException e){
-			e.printStackTrace();
-			System.out.println("Error 2");
-		} 
-		return null;
-	} 
+	 
 	
 	public static void pruebaConDobleFor(Criptado prueba) {
 		String respuesta;
 		for(int i=0;i<26;i++){
 			String ascii = Character.toString((char) 97+i);
 			for(int j=0;j<10;j++){
-				prueba.setKey(setKey("29dh120"+ascii+"dk1"+Integer.toString(j)+"3"));
+				prueba.setKey(prueba.setKey("29dh120"+ascii+"dk1"+Integer.toString(j)+"3"));
 				respuesta=prueba.decrypt(msj);
 				if(respuesta.equals("NULL")!=true) {
 					System.out.println(ascii+"    "+Integer.toString(j)+"    "+"29dh120"+ascii+"dk1"+Integer.toString(j)+"3");
@@ -61,7 +43,7 @@ public class Caso7 {
 		for(int i=0;i<10;i++){
 			numeros.add(Integer.toString(i));
 		}
-		Grupos gruposDePrueba=new Grupos(letras,numeros,prueba);
+		Grupos gruposDePrueba=new Grupos(letras,numeros,prueba,msj);
 		gruposDePrueba.reducirGrupos(5);
 		//gruposDePrueba.imprimirGrupos();
 	}

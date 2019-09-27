@@ -9,11 +9,13 @@ public class Grupos {
 	private ArrayList<String> grupo2= new ArrayList<String>();
 	Criptado prueba;
 	ArrayList<SubGrupos> subGruposCorrectos= new ArrayList<SubGrupos>();
+	String msj;
 	
-	public Grupos(ArrayList<String> pGrupo1, ArrayList<String> pGrupo2, Criptado pPrueba) {
+	public Grupos(ArrayList<String> pGrupo1, ArrayList<String> pGrupo2, Criptado pPrueba,String pMsj) {
 		grupo1=pGrupo1;
 		grupo2=pGrupo2;
 		prueba=pPrueba;
+		msj=pMsj;
 	}
 	
 	public void imprimirGrupos() {
@@ -25,7 +27,7 @@ public class Grupos {
 		}
 	}
 	
-	public String[][] reducirGrupos(int cantSubGrupos){
+	public ArrayList<SubGrupos> reducirGrupos(int cantSubGrupos){
 		ArrayList<SubGrupos> subGrupos= new ArrayList<SubGrupos>();
 		double tam1=((double)grupo1.size())/cantSubGrupos;
 		double tam2=((double)grupo2.size())/cantSubGrupos;
@@ -35,7 +37,8 @@ public class Grupos {
 			List<String> subGrupo1=grupo1.subList((int)(tam1*i),(int)(tam1*(i+1)));
 			List<String> subGrupo2=grupo2.subList((int)(tam2*i),(int)(tam2*(i+1)));
 			
-			subGrupos.add(new SubGrupos(subGrupo1,subGrupo2,prueba));
+			subGrupos.add(new SubGrupos(subGrupo1,subGrupo2,prueba,msj));
+			subGrupos.get(i).busquedaExaustiva();
 		}
 		return null;
 	}
