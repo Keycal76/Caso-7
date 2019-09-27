@@ -61,7 +61,8 @@ public class Caso7 {
 		for(int i=0;i<10;i++){
 			numeros.add(Integer.toString(i));
 		}
-		Grupos gruposDePrueba=new Grupos(letras,numeros);
-		gruposDePrueba.imprimirGrupos();
+		Grupos gruposDePrueba=new Grupos(letras,numeros,prueba);
+		gruposDePrueba.reducirGrupos();
+		//gruposDePrueba.imprimirGrupos();
 	}
 }
