@@ -12,8 +12,8 @@ public class Grupos {
 	String msj;
 	
 	public Grupos(ArrayList<String> pGrupo1, ArrayList<String> pGrupo2, Criptado pPrueba,String pMsj) {
-		grupo1=pGrupo1;
-		grupo2=pGrupo2;
+		grupo1=new ArrayList<String>(pGrupo1);
+		grupo2=new ArrayList<String>(pGrupo2);
 		prueba=pPrueba;
 		msj=pMsj;
 	}
