@@ -92,7 +92,7 @@ public class Caso7 {
 		for(int i=0;i<10;i++){
 			numeros.add(Integer.toString(i));
 		}
-		System.out.println("NOTA: En Criptado.java línea 50, se agregó un if para eliminar el problema de la combinación B3\nque también desencriptaba el mensaje, pero de forma errónea");
+		System.out.println("NOTA: En Criptado.java línea 50, se agregó un if para eliminar el problema de la combinación B3\nque también desencriptaba el mensaje, pero de forma errónea, pero puede quitarse el if para añadirlo");
 		menu(letras,numeros,prueba);
 	}
 }
