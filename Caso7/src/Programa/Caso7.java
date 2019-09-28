@@ -44,7 +44,7 @@ public class Caso7 {
 			numeros.add(Integer.toString(i));
 		}
 		Grupos gruposDePrueba=new Grupos(letras,numeros,prueba,msj);
-		gruposDePrueba.reducirGrupos(4);
-		//gruposDePrueba.imprimirGrupos();
+		gruposDePrueba.aproximarRespuesta(3);
+		//gruposDePrueba.imprimirGrupos();  //Los subgrupos mayores a 1 y menores a 10
 	}
 }

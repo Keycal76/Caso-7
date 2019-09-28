@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SubGrupos {
-	private List<String> grupo1= new ArrayList<String>();
-	private List<String> grupo2= new ArrayList<String>();
+	public List<String> grupo1= new ArrayList<String>();
+	public List<String> grupo2= new ArrayList<String>();
 	Criptado prueba;
 	String msj;
 	
 	public SubGrupos(List<String> pGrupo1, List<String> pGrupo2, Criptado pPrueba, String pMsj) {
-		grupo1=pGrupo1;
-		grupo2=pGrupo2;
+		grupo1=new ArrayList<String>(pGrupo1);
+		grupo2=new ArrayList<String>(pGrupo2);
 		prueba=pPrueba;
 		msj=pMsj;
-		System.out.println("Sub 1: "+grupo1.toString());
-		System.out.println("Sub 2: "+grupo2.toString());
+		//System.out.println("Sub 1: "+grupo1.toString());
+		//System.out.println("Sub 2: "+grupo2.toString());
 	}
 	
 	public int busqueda50porciento() {
