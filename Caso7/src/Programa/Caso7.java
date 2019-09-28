@@ -4,6 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -32,6 +33,44 @@ public class Caso7 {
 		}
 	}
 	
+	public static void menu(ArrayList<String> letras, ArrayList<String> numeros, Criptado prueba) {
+		boolean estar=true;
+		while(estar) {
+			String entradaTeclado="";
+	        Scanner entradaEscaner=new Scanner (System.in);
+			boolean salir=false;
+			while(!salir) {
+				System.out.println("¿Cuanta cantidad de sub grupos desea realizar?(2-10): ");
+		        entradaTeclado=entradaEscaner.nextLine ();
+		        try {
+			        if(Integer.parseInt(entradaTeclado)<=10 && Integer.parseInt(entradaTeclado)>=2){
+			        	Grupos gruposDePrueba=new Grupos(letras,numeros,prueba,msj);
+						List[] resp=gruposDePrueba.aproximarRespuesta(Integer.parseInt(entradaTeclado));
+						salir=true;
+			        }else {
+			        	System.out.println("Debe ser un número ente 2 y 10");
+			        }
+		        }catch (NumberFormatException e) {
+		        	System.out.println("Debe ser un número");
+		        }
+			}
+	        salir=false;
+	        while(!salir) {
+	        	System.out.println("¿Desea salir?(S/N): ");
+		        entradaTeclado=entradaEscaner.nextLine ();
+		        if(entradaTeclado.equals("S")) {
+		        	estar=false;
+		        	salir=true;
+		        }else if(entradaTeclado.equals("N")){
+		        	salir=true;
+		        }else {
+		        	System.out.println("Opción inválida");
+		        }
+	        }
+		}
+		//gruposDePrueba.imprimirGrupos();
+	}
+	
 	public static void main(String[] args){
 		msj="xZwM7BWIpSjYyGFr9rhpEa+cYVtACW7yQKmyN6OYSCv0ZEg9jWbc6lKzzCxRSSIvOvlimQZBMZOYnOwiA9yy3YU8zk4abFSItoW6Wj0ufQ0=";
 		myKey="29dh120_dk1_3";
@@ -45,23 +84,6 @@ public class Caso7 {
 		for(int i=0;i<10;i++){
 			numeros.add(Integer.toString(i));
 		}
-		boolean estar=true;
-		while(estar) {
-			System.out.println("¿Cuanta cantidad de sub grupos desea realizar?(2-10): ");
-			String entradaTeclado="";
-	        Scanner entradaEscaner=new Scanner (System.in);
-	        entradaTeclado=entradaEscaner.nextLine ();
-	        try {
-		        if(Integer.parseInt(entradaTeclado)<=10 && Integer.parseInt(entradaTeclado)>=2){
-		        	Grupos gruposDePrueba=new Grupos(letras,numeros,prueba,msj);
-					gruposDePrueba.aproximarRespuesta(Integer.parseInt(entradaTeclado));
-		        }else {
-		        	System.out.println("Debe ser un número ente 2 y 10");
-		        }
-	        }catch (NumberFormatException e) {
-	        	System.out.println("Debe ser un número");
-	        }
-		}
-		//gruposDePrueba.imprimirGrupos();
+		menu(letras,numeros,prueba);
 	}
 }

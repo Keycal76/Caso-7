@@ -18,7 +18,7 @@ public class Grupos {
 		msj=pMsj;
 	}
 	
-	public void aproximarRespuesta(int cantSubGrupos) {
+	public List[] aproximarRespuesta(int cantSubGrupos) {
 		int r=0;
 		while(subGruposCorrectos.size()<cantSubGrupos) {
 			reducirGrupos(cantSubGrupos);
@@ -58,6 +58,7 @@ public class Grupos {
 		
 		System.out.println("FINAL 1: "+coincidencias1.toString());
 		System.out.println("FINAL 2: "+coincidencias2.toString());
+		return new List[] {coincidencias1,coincidencias2};
 	}
 	
 	public void reducirGrupos(int cantSubGrupos){
