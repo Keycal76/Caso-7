@@ -27,7 +27,7 @@ public class SubGrupos {
 				respuesta=prueba.decrypt(msj);
 				if(respuesta.equals("NULL")!=true) {
 					aciertos+=1;
-					System.out.println("UN ACIERTO");
+					//System.out.println("UN ACIERTO");
 				}
 			}
 		}

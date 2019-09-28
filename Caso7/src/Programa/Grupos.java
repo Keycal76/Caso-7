@@ -24,7 +24,7 @@ public class Grupos {
 			reducirGrupos(cantSubGrupos);
 			r++;
 		}
-		System.out.println("Final de busqueda "+subGruposCorrectos.size()+" "+r);
+		//System.out.println("Final de busqueda "+subGruposCorrectos.size()+" "+r);
 		List<String> coincidencias1=subGruposCorrectos.get(0).grupo1;
 		List<String> coincidencias2=subGruposCorrectos.get(0).grupo2;
 		List<String> temp=new ArrayList<String>();
@@ -56,8 +56,8 @@ public class Grupos {
 			}
 		}
 		
-		System.out.println("FINAL 1: "+coincidencias1.toString());
-		System.out.println("FINAL 2: "+coincidencias2.toString());
+		//System.out.println("FINAL 1: "+coincidencias1.toString());
+		//System.out.println("FINAL 2: "+coincidencias2.toString());
 		return new List[] {coincidencias1,coincidencias2};
 	}
 	

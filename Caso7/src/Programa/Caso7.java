@@ -46,6 +46,14 @@ public class Caso7 {
 			        if(Integer.parseInt(entradaTeclado)<=10 && Integer.parseInt(entradaTeclado)>=2){
 			        	Grupos gruposDePrueba=new Grupos(letras,numeros,prueba,msj);
 						List[] resp=gruposDePrueba.aproximarRespuesta(Integer.parseInt(entradaTeclado));
+						System.out.println("Posibles respuestas para el caracter 1: ");
+						for(int i=0;i<resp[0].size();i++) {
+							System.out.println(resp[0].get(i));
+						}
+						System.out.println("Posibles respuestas para el caracter 2: ");
+						for(int i=0;i<resp[1].size();i++) {
+							System.out.println(resp[1].get(i));
+						}
 						salir=true;
 			        }else {
 			        	System.out.println("Debe ser un número ente 2 y 10");
