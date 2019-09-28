@@ -29,8 +29,8 @@ public class Grupos {
 		List<String> coincidencias2=subGruposCorrectos.get(0).grupo2;
 		List<String> temp=new ArrayList<String>();
 		for(int i=1;i<subGruposCorrectos.size();i++) {
-			System.out.println("Proceso 1: "+coincidencias1.toString()+"||"+subGruposCorrectos.get(i).grupo1.toString());
-			System.out.println("Proceso 2: "+coincidencias2.toString()+"||"+subGruposCorrectos.get(i).grupo2.toString());
+			//System.out.println("Proceso 1: "+coincidencias1.toString()+"||"+subGruposCorrectos.get(i).grupo1.toString());
+			//System.out.println("Proceso 2: "+coincidencias2.toString()+"||"+subGruposCorrectos.get(i).grupo2.toString());
 			for(int j=0;j<subGruposCorrectos.get(i).grupo1.size();j++) {
 				for(int k=0;k<coincidencias1.size();k++) {
 					if(subGruposCorrectos.get(i).grupo1.get(j).equals(coincidencias1.get(k))) {

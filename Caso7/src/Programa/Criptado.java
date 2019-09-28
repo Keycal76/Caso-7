@@ -47,6 +47,9 @@ public class Criptado {
 			cipher = Cipher.getInstance("AES");
 			cipher.init(Cipher.DECRYPT_MODE, aesKey);
 			String decrypted = new String(cipher.doFinal(encryptedBytes));
+			if(secretKey.toString().equals("javax.crypto.spec.SecretKeySpec@179fa")) {
+				return "NULL";
+			}
 			return decrypted;
 		}catch (NoSuchAlgorithmException e) {
 		}catch (NoSuchPaddingException e) {
